@@ -1,0 +1,11 @@
+language: ruby
+rvm:
+- 2.0.0
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: P2BNpOJscIEob1/EOLxhs3b+GzmqtuWilQeWmQkqjlWGTidcL5yMTh0x47THXcrYcNgn7DkKqBALXWep7gg9EFbDIeWUJU/r71Bi/wVD+nraqX3uhqqJn/ElVhtB68mkvkow1SPsWRCeVXSNUo2ua0ETLjVPcf7iMs4wB7U4bUzLZMs1eHXpJfM8BhzqlBFlB62cNjR8h0Nn5Jgf+VF/ke0nlJjttB1XGVVAVXboGOz4R9mBPniVGF30cVASrFq6ETqtCcCYhrlCmHYMRvGbarnQdiwWRKk9W0XRH4+yv8cILDF4avUdws5iqEdGAuuEFXMwSOWtj5k9tqgRvEJH5ajduAbDONEGoSnbu/C9v8jfjxZQgqYkWnRsemei3eE8pZI90kxBixb0VgSZ9DN/yzxqhEAkB9cTIIwH5Xw01df19fgN5OfOJDe84jYu2D895znkct5NxbfdaYwPEoghfxqAObGe5VzucZ9ZfqgLI0rkrDV3A5aRp9l5LBZj9BaaPrUIebk6Qt5GsvZ4jUxauttifKHy7X1QYkV8BBOXzmJ/shaCY14qMGf3dfxcu9ulb81cc0UUl1UZPg5cocvYb8ftrU6Mxk4fBY2ZuQordtmIavAye+hC9FFWuUo1cOBZm2YU3r0ldZ4MuXqhBesn0F+E8iqDwA/Zuh7PYNK30Mw=
+  app: secure-ocean-53691
+  on:
+    repo: cfall/projet
