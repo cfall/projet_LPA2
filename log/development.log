@@ -204,3 +204,224 @@ ActionController::RoutingError (No route matches [GET] "/ProjetLPA2"):
   Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
   Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (10.9ms)
   Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (37.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCities (20161011100018)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "cities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "lat" float, "lon" float, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161011100018"]]
+  [1m[36m (24.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/cities" for 104.131.159.76 at 2016-10-11 06:13:26 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.4ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered cities/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 1003ms (Views: 982.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/cities.css?body=1" for 104.131.159.76 at 2016-10-11 06:13:27 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 104.131.159.76 at 2016-10-11 06:13:28 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 104.131.159.76 at 2016-10-11 06:13:28 -0400
+
+
+Started GET "/assets/users.css?body=1" for 104.131.159.76 at 2016-10-11 06:13:28 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 104.131.159.76 at 2016-10-11 06:13:28 -0400
+
+
+Started GET "/assets/application.css?body=1" for 104.131.159.76 at 2016-10-11 06:13:28 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 104.131.159.76 at 2016-10-11 06:13:28 -0400
+
+
+Started GET "/assets/cities.js?body=1" for 104.131.159.76 at 2016-10-11 06:13:28 -0400
+
+
+Started GET "/assets/application.js?body=1" for 104.131.159.76 at 2016-10-11 06:13:28 -0400
+
+
+Started GET "/assets/users.js?body=1" for 104.131.159.76 at 2016-10-11 06:13:28 -0400
+
+
+Started GET "/cities/new" for 104.131.159.76 at 2016-10-11 06:13:31 -0400
+Processing by CitiesController#new as HTML
+  Rendered cities/_form.html.erb (51.6ms)
+  Rendered cities/new.html.erb within layouts/application (61.4ms)
+Completed 200 OK in 121ms (Views: 118.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/cities" for 104.131.159.76 at 2016-10-11 06:13:36 -0400
+Processing by CitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xwIwillDbL5qhooR6SRtE4G/ZngnU3o9MBirAQW5Nuk=", "city"=>{"name"=>"Belfort", "lat"=>"", "lon"=>""}, "commit"=>"Create City"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 313ms
+
+MultiJson::ParseError (795: unexpected token at 'The AppKey submitted with this request is invalid.'):
+  app/models/city.rb:8:in `first'
+  app/models/city.rb:8:in `geocode'
+  app/controllers/cities_controller.rb:30:in `block in create'
+  app/controllers/cities_controller.rb:29:in `create'
+
+
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (152.8ms)
+
+
+Started POST "/cities" for 104.131.159.76 at 2016-10-11 06:15:32 -0400
+Processing by CitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xwIwillDbL5qhooR6SRtE4G/ZngnU3o9MBirAQW5Nuk=", "city"=>{"name"=>"Belfort", "lat"=>"", "lon"=>""}, "commit"=>"Create City"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 142ms
+
+MultiJson::ParseError (795: unexpected token at 'The AppKey submitted with this request is invalid.'):
+  app/models/city.rb:8:in `first'
+  app/models/city.rb:8:in `geocode'
+  app/controllers/cities_controller.rb:30:in `block in create'
+  app/controllers/cities_controller.rb:29:in `create'
+
+
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.0ms)
+
+
+Started GET "/" for 104.131.159.76 at 2016-10-11 06:22:31 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/railties-4.1.6/lib/rails/templates/rails/welcome/index.html.erb (2.1ms)
+Completed 200 OK in 30ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cities" for 104.131.159.76 at 2016-10-11 06:22:36 -0400
+Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered cities/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 124ms (Views: 121.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/cities.css?body=1" for 104.131.159.76 at 2016-10-11 06:22:36 -0400
+
+
+Started GET "/assets/cities.js?body=1" for 104.131.159.76 at 2016-10-11 06:22:37 -0400
+
+
+Started GET "/cities/new" for 104.131.159.76 at 2016-10-11 06:22:42 -0400
+Processing by CitiesController#new as HTML
+  Rendered cities/_form.html.erb (22.9ms)
+  Rendered cities/new.html.erb within layouts/application (26.7ms)
+Completed 200 OK in 90ms (Views: 88.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/cities" for 104.131.159.76 at 2016-10-11 06:23:06 -0400
+Processing by CitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xwIwillDbL5qhooR6SRtE4G/ZngnU3o9MBirAQW5Nuk=", "city"=>{"name"=>"Belfort", "lat"=>"", "lon"=>""}, "commit"=>"Create City"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "cities" ("created_at", "lat", "lon", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2016-10-11 10:23:06.271352"], ["lat", 47.6379599], ["lon", 6.8628942], ["name", "Belfort"], ["updated_at", "2016-10-11 10:23:06.271352"]]
+  [1m[36m (24.8ms)[0m  [1mcommit transaction[0m
+Redirected to https://projet-fallsheikh78341.codeanyapp.com/cities/1
+Completed 302 Found in 342ms (ActiveRecord: 25.4ms)
+
+
+Started GET "/cities/1" for 104.131.159.76 at 2016-10-11 06:23:06 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCity Load (0.3ms)[0m  SELECT  "cities".* FROM "cities"  WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered cities/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 67ms (Views: 64.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cities" for 104.131.159.76 at 2016-10-11 06:23:17 -0400
+Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered cities/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 74ms (Views: 72.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities/new" for 104.131.159.76 at 2016-10-11 06:23:19 -0400
+Processing by CitiesController#new as HTML
+  Rendered cities/_form.html.erb (3.1ms)
+  Rendered cities/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 66ms (Views: 65.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cities" for 104.131.159.76 at 2016-10-11 06:23:24 -0400
+Processing by CitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xwIwillDbL5qhooR6SRtE4G/ZngnU3o9MBirAQW5Nuk=", "city"=>{"name"=>"Dakar", "lat"=>"", "lon"=>""}, "commit"=>"Create City"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "cities" ("created_at", "lat", "lon", "name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2016-10-11 10:23:24.314359"], ["lat", 14.6934248], ["lon", -17.4479376], ["name", "Dakar"], ["updated_at", "2016-10-11 10:23:24.314359"]]
+  [1m[35m (31.1ms)[0m  commit transaction
+Redirected to https://projet-fallsheikh78341.codeanyapp.com/cities/2
+Completed 302 Found in 330ms (ActiveRecord: 31.5ms)
+
+
+Started GET "/cities/2" for 104.131.159.76 at 2016-10-11 06:23:24 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities"  WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered cities/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 66ms (Views: 63.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities" for 104.131.159.76 at 2016-10-11 06:23:29 -0400
+Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.2ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered cities/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 84ms (Views: 83.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 104.131.159.76 at 2016-10-11 08:01:05 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/railties-4.1.6/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 19ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cities" for 104.131.159.76 at 2016-10-11 08:01:14 -0400
+Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.3ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered cities/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 128ms (Views: 125.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/cities.css?body=1" for 104.131.159.76 at 2016-10-11 08:01:15 -0400
+
+
+Started GET "/assets/cities.js?body=1" for 104.131.159.76 at 2016-10-11 08:01:15 -0400
+
+
+Started GET "/cities/new" for 104.131.159.76 at 2016-10-11 08:01:21 -0400
+Processing by CitiesController#new as HTML
+  Rendered cities/_form.html.erb (16.2ms)
+  Rendered cities/new.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 81ms (Views: 80.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cities" for 104.131.159.76 at 2016-10-11 08:01:29 -0400
+Processing by CitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xwIwillDbL5qhooR6SRtE4G/ZngnU3o9MBirAQW5Nuk=", "city"=>{"name"=>"Casablanca", "lat"=>"", "lon"=>""}, "commit"=>"Create City"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "cities" ("created_at", "lat", "lon", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2016-10-11 12:01:29.096575"], ["lat", 33.5949733], ["lon", -7.6188008], ["name", "Casablanca"], ["updated_at", "2016-10-11 12:01:29.096575"]]
+  [1m[36m (24.4ms)[0m  [1mcommit transaction[0m
+Redirected to https://projet-fallsheikh78341.codeanyapp.com/cities/3
+Completed 302 Found in 333ms (ActiveRecord: 25.0ms)
+
+
+Started GET "/cities/3" for 104.131.159.76 at 2016-10-11 08:01:29 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCity Load (0.3ms)[0m  SELECT  "cities".* FROM "cities"  WHERE "cities"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered cities/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 63ms (Views: 60.2ms | ActiveRecord: 0.3ms)
