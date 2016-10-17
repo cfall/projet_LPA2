@@ -3134,3 +3134,222 @@ NoMethodError (undefined method `currently' for nil:NilClass):
   Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
   Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
   Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.8ms)
+
+
+Started GET "/cities" for 104.131.159.76 at 2016-10-17 13:15:34 -0400
+Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.4ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+  Rendered cities/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 470ms (Views: 76.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/cities.css?body=1" for 104.131.159.76 at 2016-10-17 13:15:35 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 104.131.159.76 at 2016-10-17 13:15:35 -0400
+
+
+Started GET "/assets/application.css?body=1" for 104.131.159.76 at 2016-10-17 13:15:35 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 104.131.159.76 at 2016-10-17 13:15:35 -0400
+
+
+Started GET "/assets/users.css?body=1" for 104.131.159.76 at 2016-10-17 13:15:35 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 104.131.159.76 at 2016-10-17 13:15:35 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 104.131.159.76 at 2016-10-17 13:15:35 -0400
+
+
+Started GET "/assets/cities.js?body=1" for 104.131.159.76 at 2016-10-17 13:15:35 -0400
+
+
+Started GET "/assets/users.js?body=1" for 104.131.159.76 at 2016-10-17 13:15:35 -0400
+
+
+Started GET "/assets/application.js?body=1" for 104.131.159.76 at 2016-10-17 13:15:35 -0400
+
+
+Started GET "/cities/1" for 104.131.159.76 at 2016-10-17 13:15:38 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCity Load (0.3ms)[0m  SELECT  "cities".* FROM "cities"  WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered cities/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 174ms (Views: 65.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cities/1" for 104.131.159.76 at 2016-10-17 13:28:59 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities"  WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered cities/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 212ms (Views: 73.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 104.131.159.76 at 2016-10-17 13:29:00 -0400
+
+
+Started GET "/assets/cities.css?body=1" for 104.131.159.76 at 2016-10-17 13:29:00 -0400
+
+
+Started GET "/assets/users.css?body=1" for 104.131.159.76 at 2016-10-17 13:29:00 -0400
+
+
+Started GET "/assets/application.css?body=1" for 104.131.159.76 at 2016-10-17 13:29:00 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 104.131.159.76 at 2016-10-17 13:29:00 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 104.131.159.76 at 2016-10-17 13:29:00 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 104.131.159.76 at 2016-10-17 13:29:00 -0400
+
+
+Started GET "/assets/application.js?body=1" for 104.131.159.76 at 2016-10-17 13:29:00 -0400
+
+
+Started GET "/assets/cities.js?body=1" for 104.131.159.76 at 2016-10-17 13:29:00 -0400
+
+
+Started GET "/assets/users.js?body=1" for 104.131.159.76 at 2016-10-17 13:29:00 -0400
+
+
+Started GET "/cities/1" for 104.131.159.76 at 2016-10-17 13:29:28 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities"  WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 74ms
+
+NoMethodError (undefined method `currently' for nil:NilClass):
+  app/models/city.rb:10:in `forecast_io'
+  app/controllers/cities_controller.rb:16:in `show'
+
+
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.9ms)
+
+
+Started GET "/cities/1" for 104.131.159.76 at 2016-10-17 13:29:30 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities"  WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 66ms
+
+NoMethodError (undefined method `currently' for nil:NilClass):
+  app/models/city.rb:10:in `forecast_io'
+  app/controllers/cities_controller.rb:16:in `show'
+
+
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.2ms)
+
+
+Started GET "/cities/1" for 104.131.159.76 at 2016-10-17 13:29:30 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities"  WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 98ms
+
+NoMethodError (undefined method `currently' for nil:NilClass):
+  app/models/city.rb:10:in `forecast_io'
+  app/controllers/cities_controller.rb:16:in `show'
+
+
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.5ms)
+
+
+Started GET "/cities/1" for 104.131.159.76 at 2016-10-17 13:29:30 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities"  WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 123ms
+
+NoMethodError (undefined method `currently' for nil:NilClass):
+  app/models/city.rb:10:in `forecast_io'
+  app/controllers/cities_controller.rb:16:in `show'
+
+
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.2ms)
+
+
+Started GET "/cities/1" for 104.131.159.76 at 2016-10-17 13:29:31 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCity Load (0.2ms)[0m  SELECT  "cities".* FROM "cities"  WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 126ms
+
+NoMethodError (undefined method `currently' for nil:NilClass):
+  app/models/city.rb:10:in `forecast_io'
+  app/controllers/cities_controller.rb:16:in `show'
+
+
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.7ms)
+
+
+Started GET "/cities/1" for 104.131.159.76 at 2016-10-17 13:29:31 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities"  WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 104ms
+
+NoMethodError (undefined method `currently' for nil:NilClass):
+  app/models/city.rb:10:in `forecast_io'
+  app/controllers/cities_controller.rb:16:in `show'
+
+
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.0ms)
+
+
+Started GET "/cities/1" for 104.131.159.76 at 2016-10-17 13:29:31 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities"  WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 112ms
+
+NoMethodError (undefined method `currently' for nil:NilClass):
+  app/models/city.rb:10:in `forecast_io'
+  app/controllers/cities_controller.rb:16:in `show'
+
+
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.1ms)
+
+
+Started GET "/cities/1" for 104.131.159.76 at 2016-10-17 13:29:31 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities"  WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 62ms
+
+NoMethodError (undefined method `currently' for nil:NilClass):
+  app/models/city.rb:10:in `forecast_io'
+  app/controllers/cities_controller.rb:16:in `show'
+
+
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.7ms)

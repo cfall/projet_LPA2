@@ -52,7 +52,3 @@ gem 'vcr', '~> 3.0', '>= 3.0.3'
 
 gem 'forecast_io', '~> 2.0', '>= 2.0.1'
 
-gem 'typhoeus'
-require 'typhoeus/adapters/faraday'
-
-Faraday.default_adapter = :typhoeus
