@@ -8,10 +8,10 @@ class City < ActiveRecord::Base
     forecast = ForecastIO.forecast(self.lat, self.lon, params: { units: 'si' })
     results = {}
 		results[:temperature] = forecast.currently.temperature
-    #results[:summary] = forecast.currently.summary
-    #results[:windSpeed] = forecast.currently.windSpeed
-		#results[:cloudCover] = forecast.currently.cloudCover
-		#results[:precipProbability] = forecast.currently.precipProbability
+    results[:summary] = forecast.currently.summary
+    results[:windSpeed] = forecast.currently.windSpeed
+		results[:cloudCover] = forecast.currently.cloudCover
+		results[:precipProbability] = forecast.currently.precipProbability
 		results
   end
   
