@@ -1,4 +1,5 @@
 class City < ActiveRecord::Base
+  
   before_create :geocode
   
   public
@@ -6,10 +7,12 @@ class City < ActiveRecord::Base
   def forecast_io
     forecast = ForecastIO.forecast(self.lat, self.lon, params: { units: 'si' })
     results = {}
-	  results[:temperature] = forecast.currently.temperature
+		results[:temperature] = forecast.currently.temperature
     results[:summary] = forecast.currently.summary
     results[:windSpeed] = forecast.currently.windSpeed
-	  results
+		results[:cloudCover] = forecast.currently.cloudCover
+		results[:precipProbability] = forecast.currently.precipProbability
+		results
   end
   
   def geocode
@@ -17,4 +20,5 @@ class City < ActiveRecord::Base
     self.lat=places.first.lat
     self.lon=places.first.lon
   end
+	
 end

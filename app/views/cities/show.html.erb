@@ -1,33 +1,43 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Ville:</strong>
   <%= @city.name %>
 </p>
 
 <p>
-  <strong>Lat:</strong>
+  <strong>Latitude:</strong>
   <%= @city.lat %>
 </p>
 
 <p>
-  <strong>Lon:</strong>
+  <strong>Longitude:</strong>
   <%= @city.lon %>
 </p>
 
 <p>
-  <strong>Temperature:</strong>
+  <strong>Température:</strong>
   <%=  @forecasts[:temperature] %>
 </p>
 
 <p>
-  <strong>Summary:</strong>
+  <strong>Aperçu:</strong>
   <%=  @forecasts[:summary] %>
 </p>
 
 <p>
-  <strong>WindSpeed:</strong>
-  <%=  @forecasts[:windSpeed] %>
+  <strong>Vitesse du vent:</strong>
+  <%= @forecasts[:windSpeed] %>
+</p>
+
+<p>
+  <strong>Couverture nuageuse:</strong>
+  <%= @forecasts[:cloudCover] %>
+</p>
+
+<p>
+  <strong>Risque de précipitation:</strong>
+  <%= @forecasts[:precipProbability] %>
 </p>
 
 <%= link_to 'Edit', edit_city_path(@city) %> |
