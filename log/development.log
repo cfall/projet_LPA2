@@ -3404,3 +3404,37 @@ NoMethodError (undefined method `currently' for nil:NilClass):
   Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
   Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
   Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.0ms)
+
+
+Started GET "/cities/1" for 104.131.159.76 at 2016-10-17 13:46:17 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities"  WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 103ms
+
+NoMethodError (undefined method `currently' for nil:NilClass):
+  app/models/city.rb:10:in `forecast_io'
+  app/controllers/cities_controller.rb:16:in `show'
+
+
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.2ms)
+
+
+Started GET "/cities/1" for 104.131.159.76 at 2016-10-17 13:46:19 -0400
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities"  WHERE "cities"."id" = ? LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 126ms
+
+NoMethodError (undefined method `currently' for nil:NilClass):
+  app/models/city.rb:10:in `forecast_io'
+  app/controllers/cities_controller.rb:16:in `show'
+
+
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/cabox/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.6ms)

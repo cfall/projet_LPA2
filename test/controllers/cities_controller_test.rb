@@ -6,9 +6,11 @@ class CitiesControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
+    VCR.use_cassette("forecast_io") do
     get :index
     assert_response :success
     assert_not_nil assigns(:cities)
+    end
   end
 
   test "should get new" do
@@ -17,23 +19,19 @@ class CitiesControllerTest < ActionController::TestCase
   end
 
   test "should create city" do
-    VCR.use_cassette("nominatim") do 
-      #assert_difference('City.count') do
-      #city = City.new  name: @city.name
-      #city.save
-      #end
-       assert_difference('City.count') do
-      post :create, city: { lat: @city.lat, lon: @city.lon, name: @city.name }
+    VCR.use_cassette("nominatim") do
+        assert_difference('City.count') do
+          post :create, city: { lat: @city.lat, lon: @city.lon, name: @city.name }
+        end
     end
-    end
-   
-
     assert_redirected_to city_path(assigns(:city))
   end
 
   test "should show city" do
+    VCR.use_cassette("forecast_io") do
     get :show, id: @city
     assert_response :success
+    end
   end
 
   test "should get edit" do
@@ -42,15 +40,12 @@ class CitiesControllerTest < ActionController::TestCase
   end
 
   test "should update city" do
-     VCR.use_cassette("nominatim") do 
-      #assert_difference('City.count') do
-      #city = City.new  name: @city.name
-      #city.save
-      #end
-       patch :update, id: @city, city: { lat: @city.lat, lon: @city.lon, name: @city.name }
+    VCR.use_cassette("nominatim") do
+      VCR.use_cassette("forecast_io") do
+    patch :update, id: @city, city: { lat: @city.lat, lon: @city.lon, name: @city.name }
     assert_redirected_to city_path(assigns(:city))
+      end
     end
-    
   end
 
   test "should destroy city" do
