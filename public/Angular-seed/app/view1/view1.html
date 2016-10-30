@@ -1,0 +1,32 @@
+<p>This is the partial for view 1.</p>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+
+      Search: <input ng-model="$ctrl.query" />
+
+    </div>
+    <div class="col-md-10">
+      <!--Body content-->
+
+      <ul class="phones">
+        <li ng-repeat="user in users | filter:$ctrl.query">
+          <span>{{user.name}}</span>
+          <p>{{user.surname}}</p>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+<ul>
+   <li ng-repeat="student in students">
+     <span>{{student.name}}</span>
+     <p>{{student.surname}}</p>
+   </li>
+ </ul>
+
