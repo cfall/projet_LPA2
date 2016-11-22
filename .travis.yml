@@ -8,3 +8,10 @@ deploy:
   app: secure-ocean-53691
   on:
     repo: cfall/projet_LPA2
+    
+  addons:
+  code_climate:
+    repo_token: 906190a23e1e7dcac2f94d5bbc8adc3e770f00ead218d66dce0a61641773b23a
+# regular test configuration
+after_success:
+  - bundle exec codeclimate-test-reporter
