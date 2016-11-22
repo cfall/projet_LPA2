@@ -7,9 +7,8 @@ deploy:
     secure: QP8+UrCeGp+59BY8M88i2SGj5VWJxcr9q5Brd7f8Qts5Ck488ruXEfYQVUbch9a0zlogEsh67VJ5RTuucmLHxT0UrUQmg3z68MPIrBThyw2q8/ArRx9+MQ5D1hAtL9J6o8cZ/dlEMVUCJyiyZs19rXiZMAuBsaZC3tLij03nZKFo1vrRK5UAFLslqi+f7YAva1cyKXWZAPHeQYkMEnXiPDCB0ZweaxyKfDhhOmpUsg7W0Nvm2x2xfuD28ntQi9QppIiXPejO+D1kFRGcDIoAEeqkKTWexaNQrl/PIWX+RWguDqqUStm+f5GgIxfIjk8zz70ltX7zSah5Y+mYAKZmrEIktk8kOsRfN2T1cnWad/Twgy+OjwUazlDuvavGZkXyJR9aImjWn6inBrltJMPkcjIrjsjc333OOxeXwLzuOySBId5+VrVzuS/Gg+orL+UFcaosucGE1OOw4jGm9IR2MWcmKNywYe9+DyPliW+iFrMTUaBn5SpBTBzX5aH0aHA0L6k15OYgbzTlYzsQsup9b7xdN6KxabOknZhQIK3Edod6boXYjj9PqM91j1CdqY5c6Wo2XpGO2vD5w/gDUqYbEXyOF1iRfye8WoES9kprFWJkD9mGrE4WyTPNyufXmrXE91Y2CI/piZRyBUFGBqonutxUokc7zm4MsctHeVTD6xM=
   app: secure-ocean-53691
   on:
-    repo: cfall/projet_LPA2
-    
-  addons:
+    repo: cfall/projet_LPA2  
+addons:
   code_climate:
     repo_token: 906190a23e1e7dcac2f94d5bbc8adc3e770f00ead218d66dce0a61641773b23a
 # regular test configuration
