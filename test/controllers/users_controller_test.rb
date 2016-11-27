@@ -1,14 +1,14 @@
 require 'test_helper'
 
-class UsersControllerTest < ActionController::TestCase
+class StudentsControllerTest < ActionController::TestCase
   setup do
-    @user = users(:one)
+    @student = students(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:users)
+    assert_not_nil assigns(:students)
   end
 
   test "should get new" do
@@ -16,34 +16,34 @@ class UsersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create user" do
-    assert_difference('User.count') do
-      post :create, user: { birthday: @user.birthday, name: @user.name, surname: @user.surname }
+  test "should create student" do
+    assert_difference('Student.count') do
+      post :create, student: { birthday: @student.birthday, name: @student.name, surname: @student.surname }
     end
 
-    assert_redirected_to user_path(assigns(:user))
+    assert_redirected_to student_path(assigns(:student))
   end
 
-  test "should show user" do
-    get :show, id: @user
+  test "should show student" do
+    get :show, id: @student
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @user
+    get :edit, id: @student
     assert_response :success
   end
 
-  test "should update user" do
-    patch :update, id: @user, user: { birthday: @user.birthday, name: @user.name, surname: @user.surname }
-    assert_redirected_to user_path(assigns(:user))
+  test "should update student" do
+    patch :update, id: @student, student: { birthday: @student.birthday, name: @student.name, surname: @student.surname }
+    assert_redirected_to student_path(assigns(:student))
   end
 
-  test "should destroy user" do
-    assert_difference('User.count', -1) do
-      delete :destroy, id: @user
+  test "should destroy student" do
+    assert_difference('Student.count', -1) do
+      delete :destroy, id: @student
     end
 
-    assert_redirected_to users_path
+    assert_redirected_to students_path
   end
 end
