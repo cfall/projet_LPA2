@@ -3209,3 +3209,190 @@ CityTest: test_Should_create_city
   [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "cities"
   [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "cities"[0m
+  [1m[35mFixture Insert (1.0ms)[0m  INSERT INTO "cities" ("name", "lat", "lon", "created_at", "updated_at", "id") VALUES ('Belfort', 1.5, 1.5, '2016-11-28 15:27:39', '2016-11-28 15:27:39', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "cities" ("name", "lat", "lon", "created_at", "updated_at", "id") VALUES ('Belfort', 1.5, 1.5, '2016-11-28 15:27:39', '2016-11-28 15:27:39', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "surname", "birthday", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2016-10-06', '2016-11-28 15:27:39', '2016-11-28 15:27:39', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "surname", "birthday", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2016-10-06', '2016-11-28 15:27:39', '2016-11-28 15:27:39', 298486374)
+  [1m[36m (26.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------
+CitiesHelperTest: test_should_create_city
+-----------------------------------------
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 298486374]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "cities"[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "cities" ("name", "created_at", "updated_at", "lat", "lon") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Belfort"], ["created_at", "2016-11-28 15:27:39.975736"], ["updated_at", "2016-11-28 15:27:39.975736"], ["lat", 47.6379599], ["lon", 6.8628942]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "cities"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------------
+StudentsControllerTest: test_should_create_student
+--------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------
+StudentsControllerTest: test_should_destroy_student
+---------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------
+StudentsControllerTest: test_should_get_edit
+--------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+StudentsControllerTest: test_should_get_index
+---------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+StudentsControllerTest: test_should_get_new
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------
+StudentsControllerTest: test_should_show_student
+------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------------
+StudentsControllerTest: test_should_update_student
+--------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------
+CityTest: test_Should_create_city
+---------------------------------
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 298486374]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "cities"
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cities" ("name", "created_at", "updated_at", "lat", "lon") VALUES (?, ?, ?, ?, ?)  [["name", "Belfort"], ["created_at", "2016-11-28 15:27:40.008595"], ["updated_at", "2016-11-28 15:27:40.008595"], ["lat", 47.6379599], ["lon", 6.8628942]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "cities"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+---------------------------------------------
+CitiesControllerTest: test_should_create_city
+---------------------------------------------
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "cities"
+Processing by CitiesController#create as HTML
+  Parameters: {"city"=>{"lat"=>"1.5", "lon"=>"1.5", "name"=>"Belfort"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "cities" ("name", "lat", "lon", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Belfort"], ["lat", 47.6379599], ["lon", 6.8628942], ["created_at", "2016-11-28 15:27:40.031976"], ["updated_at", "2016-11-28 15:27:40.031976"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/cities/980190963
+Completed 302 Found in 474ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "cities"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------------
+CitiesControllerTest: test_should_destroy_city
+----------------------------------------------
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "cities"
+Processing by CitiesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "cities" WHERE "cities"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/cities
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "cities"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+------------------------------------------
+CitiesControllerTest: test_should_get_edit
+------------------------------------------
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by CitiesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  Rendered cities/_form.html.erb (18.6ms)
+  Rendered cities/edit.html.erb within layouts/application (24.8ms)
+Completed 500 Internal Server Error in 1889ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+CitiesControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT "cities".* FROM "cities"[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+CitiesControllerTest: test_should_get_new
+-----------------------------------------
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by CitiesController#new as HTML
+  Rendered cities/_form.html.erb (3.4ms)
+  Rendered cities/new.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 994ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------
+CitiesControllerTest: test_should_show_city
+-------------------------------------------
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 980190962]]
+  Rendered cities/show.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 1374ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+---------------------------------------------
+CitiesControllerTest: test_should_update_city
+---------------------------------------------
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by CitiesController#update as HTML
+  Parameters: {"city"=>{"lat"=>"1.5", "lon"=>"1.5", "name"=>"Belfort"}, "id"=>"980190962"}
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/cities/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "cities"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "cities" ("name", "lat", "lon", "created_at", "updated_at", "id") VALUES ('Belfort', 1.5, 1.5, '2016-11-28 15:31:18', '2016-11-28 15:31:18', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "cities" ("name", "lat", "lon", "created_at", "updated_at", "id") VALUES ('Belfort', 1.5, 1.5, '2016-11-28 15:31:18', '2016-11-28 15:31:18', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "surname", "birthday", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2016-10-06', '2016-11-28 15:31:18', '2016-11-28 15:31:18', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "surname", "birthday", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2016-10-06', '2016-11-28 15:31:18', '2016-11-28 15:31:18', 298486374)
+  [1m[36m (27.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------
+CitiesHelperTest: test_should_create_city
+-----------------------------------------
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 298486374]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "cities"[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "cities" ("name", "created_at", "updated_at", "lat", "lon") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Belfort"], ["created_at", "2016-11-28 15:31:18.452670"], ["updated_at", "2016-11-28 15:31:18.452670"], ["lat", 47.6379599], ["lon", 6.8628942]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "cities"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------
+CityTest: test_Should_create_city
+---------------------------------
+  [1m[35mCity Load (0.1ms)[0m  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36mCity Load (0.1ms)[0m  [1mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT 1[0m  [["id", 298486374]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "cities"
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cities" ("name", "created_at", "updated_at", "lat", "lon") VALUES (?, ?, ?, ?, ?)  [["name", "Belfort"], ["created_at", "2016-11-28 15:31:18.469772"], ["updated_at", "2016-11-28 15:31:18.469772"], ["lat", 47.6379599], ["lon", 6.8628942]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "cities"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
