@@ -16,3 +16,38 @@
 
 @import "bootstrap";
 @import "bootstrap-sprockets"; 
+
+
+#main
+{
+  margin: 20px;
+  margin-top: 50px;
+  padding: 5px;
+}
+
+#buttons
+{
+  margin-top: 10px;
+}
+
+table,td,th
+{
+  border:10px solid hsla(0,0%,100%,.5);
+}
+
+th
+{
+  height:30px;
+}
+
+h1{
+  margin-top:80px;
+}
+
+p{
+  margin-top:18px;
+}
+
+#users_p{
+  margin-top:18px;
+}
